@@ -530,7 +530,7 @@ public class RageSplineEditor : Editor {
 					Quaternion.identity,
 					HandleUtility.GetHandleSize(rageSpline.transform.TransformPoint(rageSpline.GetGradientOffset())) * 0.2f,
 					Vector3.zero,
-					Handles.CircleCap
+					Handles.CircleHandleCap
 				))
 			);
 
@@ -546,7 +546,7 @@ public class RageSplineEditor : Editor {
 						Quaternion.identity,
 						HandleUtility.GetHandleSize(rageSpline.transform.TransformPoint(point)) * 0.1f,
 						Vector3.zero,
-						Handles.CircleCap
+						Handles.CircleHandleCap
 					)
 				);
 
@@ -567,7 +567,7 @@ public class RageSplineEditor : Editor {
 					Quaternion.identity,
 					HandleUtility.GetHandleSize(rageSpline.transform.TransformPoint(rageSpline.GetTextureOffset())) * 0.2f,
 					Vector3.zero,
-					Handles.CircleCap
+					Handles.CircleHandleCap
 				))
 			);
 
@@ -580,7 +580,7 @@ public class RageSplineEditor : Editor {
 						Quaternion.identity,
 						HandleUtility.GetHandleSize(rageSpline.transform.TransformPoint(point)) * 0.1f,
 						Vector3.zero,
-						Handles.CircleCap
+						Handles.CircleHandleCap
 					)
 				);
 
@@ -601,7 +601,7 @@ public class RageSplineEditor : Editor {
 					Quaternion.identity,
 					HandleUtility.GetHandleSize(rageSpline.transform.TransformPoint(rageSpline.GetTextureOffset2())) * 0.2f,
 					Vector3.zero,
-					Handles.CircleCap
+					Handles.CircleHandleCap
 					)
 				)
 			);
@@ -615,7 +615,7 @@ public class RageSplineEditor : Editor {
 						Quaternion.identity,
 						HandleUtility.GetHandleSize(rageSpline.transform.TransformPoint(point)) * 0.1f,
 						Vector3.zero,
-						Handles.CircleCap
+						Handles.CircleHandleCap
 					)
 				);
 
@@ -641,7 +641,7 @@ public class RageSplineEditor : Editor {
 						Quaternion.identity,
 						HandleUtility.GetHandleSize(rageSpline.transform.TransformPoint(point)) * 0.2f,
 						Vector3.zero,
-						Handles.ConeCap
+						Handles.ConeHandleCap
 					)
 				);
 
@@ -789,13 +789,13 @@ public class RageSplineEditor : Editor {
 			// Loops through all points
 			for (int s = 0; s < rageSpline.GetPointCount(); s++) {
 
-				Handles.DrawCapFunction handleCap;
+				Handles.CapFunction handleCap;
 				float handleSizeMultiplier;
 				if (rageSpline.GetNatural(s)) {
-					handleCap = Handles.SphereCap;
+					handleCap = Handles.SphereHandleCap;
 					handleSizeMultiplier = 2.5f;
 				} else {
-					handleCap = Handles.RectangleCap;
+					handleCap = Handles.RectangleHandleCap;
 					handleSizeMultiplier = 1f;
 				}
 
@@ -845,7 +845,7 @@ public class RageSplineEditor : Editor {
 							Quaternion.identity,
 							HandleUtility.GetHandleSize(rageSpline.GetPositionWorldSpace(s)) * 0.1f,
 							Vector3.zero,
-							Handles.SphereCap
+							Handles.SphereHandleCap
 						)
 					);
 					if (!guiChanged && GUI.changed) {
@@ -864,7 +864,7 @@ public class RageSplineEditor : Editor {
 							Quaternion.identity,
 							HandleUtility.GetHandleSize(rageSpline.GetPositionWorldSpace(s)) * 0.1f,
 							Vector3.zero,
-							Handles.SphereCap
+							Handles.SphereHandleCap
 						)
 					);
 				}
